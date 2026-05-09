@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>صليل</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --dark-brown: #2c1a0e;
+  --mid-brown: #4a2e1a;
+  --warm-brown: #7a4a28;
+  --tan: #c4a882;
+  --cream: #f0e6d0;
+  --parchment: #e8d8b8;
+  --light-parchment: #f5ecd8;
+  --gold: #c9924a;
+  --dark-gold: #a07030;
+  --text-dark: #2c1a0e;
+}
+
+- { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+font-family: ‘Amiri’, serif;
+background-color: var(–dark-brown);
+min-height: 100vh;
+overflow-x: hidden;
+position: relative;
+}
+
+/* ===== LIBRARY BACKGROUND ===== */
+.library-bg {
+position: fixed;
+inset: 0;
+z-index: 0;
+overflow: hidden;
+}
+
+/* Floor */
+.library-bg::after {
+content: ‘’;
+position: absolute;
+bottom: 0; left: 0; right: 0;
+height: 30%;
+background: linear-gradient(180deg, transparent, rgba(80,40,10,0.8));
+}
+
+/* Bookshelves left */
+.shelf-left, .shelf-right {
+position: absolute;
+top: 0; bottom: 0;
+width: 22%;
+}
+.shelf-left { left: 0; }
+.shelf-right { right: 0; }
+
+/* Center perspective floor */
+.floor-center {
+position: absolute;
+bottom: 0; left: 50%;
+transform: translateX(-50%);
+width: 56%;
+height: 35%;
+background: linear-gradient(180deg, #c4956a 0%, #a07040 60%, #7a5030 100%);
+clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+}
+
+/* Ceiling */
+.ceiling {
+position: absolute;
+top: 0; left: 0; right: 0;
+height: 12%;
+background: linear-gradient(180deg, #1a0e06, #2c1a0e);
+}
+
+/* Ceiling light */
+.ceiling-light {
+position: absolute;
+top: 8%;
+left: 50%;
+transform: translateX(-50%);
+width: 180px;
+height: 20px;
+background: rgba(255, 240, 200, 0.25);
+border-radius: 50%;
+box-shadow: 0 0 60px 30px rgba(255,220,150,0.15), 0 0 120px 80px rgba(255,200,100,0.08);
+}
+
+/* Book rows */
+.books-row {
+display: flex;
+height: 55px;
+align-items: flex-end;
+padding: 0 4px;
+border-bottom: 4px solid var(–dark-brown);
+background: rgba(30,12,4,0.6);
+}
+.book {
+height: 42px;
+min-width: 12px;
+border-radius: 1px 0 0 0;
+margin: 0 1px;
+position: relative;
+}
+.shelf-board {
+height: 10px;
+background: linear-gradient(180deg, #5a3010, #3a1e08);
+border-bottom: 2px solid #1a0a02;
+}
+
+/* Overlay for atmosphere */
+.atmos {
+position: absolute;
+inset: 0;
+background:
+radial-gradient(ellipse 40% 60% at 50% 40%, rgba(255,200,100,0.06) 0%, transparent 70%),
+linear-gradient(180deg, rgba(20,8,2,0.3) 0%, transparent 30%, transparent 70%, rgba(20,8,2,0.5) 100%);
+}
+
+/* ===== CONTENT ===== */
+.content {
+position: relative;
+z-index: 10;
+}
+
+/* ===== HERO ===== */
+.hero {
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 40px 20px;
+text-align: center;
+position: relative;
+}
+
+.logo-img {
+width: min(220px, 55vw);
+height: auto;
+margin-bottom: 10px;
+filter: drop-shadow(0 8px 24px rgba(0,0,0,0.7));
+animation: logoFloat 5s ease-in-out infinite;
+}
+@keyframes logoFloat {
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-10px)}
+}
+
+.site-title {
+font-family: ‘Scheherazade New’, serif;
+font-size: clamp(2.5rem, 8vw, 5rem);
+color: var(–tan);
+font-weight: 700;
+text-shadow: 2px 2px 0 var(–dark-brown), 0 0 40px rgba(201,146,74,0.6);
+letter-spacing: 6px;
+animation: fadeUp 1s ease both;
+}
+
+.site-sub {
+font-family: ‘Amiri’, serif;
+color: rgba(196,168,130,0.8);
+font-size: clamp(1rem, 3vw, 1.3rem);
+margin-top: 8px;
+font-style: italic;
+animation: fadeUp 1s 0.3s ease both;
+opacity: 0;
+}
+
+.gold-line {
+width: 200px;
+height: 1px;
+background: linear-gradient(90deg, transparent, var(–gold), transparent);
+margin: 20px auto;
+animation: fadeUp 1s 0.5s ease both;
+opacity: 0;
+}
+
+.hero-desc {
+color: rgba(196,168,130,0.7);
+font-size: 1.05rem;
+animation: fadeUp 1s 0.7s ease both;
+opacity: 0;
+}
+
+.scroll-btn {
+margin-top: 36px;
+padding: 14px 44px;
+background: transparent;
+border: 1.5px solid var(–gold);
+color: var(–tan);
+font-family: ‘Scheherazade New’, serif;
+font-size: 1.2rem;
+font-weight: 700;
+border-radius: 4px;
+cursor: pointer;
+letter-spacing: 2px;
+transition: all 0.3s;
+animation: fadeUp 1s 0.9s ease both;
+opacity: 0;
+position: relative;
+overflow: hidden;
+}
+.scroll-btn::before {
+content: ‘’;
+position: absolute;
+inset: 0;
+background: var(–gold);
+transform: scaleX(0);
+transform-origin: right;
+transition: transform 0.3s;
+z-index: -1;
+}
+.scroll-btn:hover { color: var(–dark-brown); border-color: var(–gold); }
+.scroll-btn:hover::before { transform: scaleX(1); transform-origin: left; }
+
+@keyframes fadeUp {
+from{opacity:0;transform:translateY(24px)}
+to{opacity:1;transform:translateY(0)}
+}
+
+/* ===== STORIES SECTION ===== */
+.stories-section {
+padding: 60px 20px 80px;
+max-width: 1000px;
+margin: 0 auto;
+}
+
+/* SVG Scroll Banner */
+.scroll-banner {
+text-align: center;
+margin-bottom: 50px;
+}
+.scroll-banner svg { width: min(500px, 90vw); height: auto; }
+
+/* Story Card */
+.story-card {
+position: relative;
+margin-bottom: 50px;
+cursor: pointer;
+transition: transform 0.3s;
+}
+.story-card:hover { transform: translateY(-4px); }
+
+/* Parchment shape via SVG clip */
+.parchment-box {
+background: var(–light-parchment);
+border-radius: 8px;
+padding: 40px 50px;
+position: relative;
+box-shadow:
+0 4px 0 var(–tan),
+0 8px 0 rgba(0,0,0,0.3),
+0 20px 50px rgba(0,0,0,0.5),
+inset 0 0 40px rgba(180,140,80,0.15);
+border: 1px solid rgba(180,140,80,0.4);
+}
+
+/* Torn top edge */
+.parchment-box::before {
+content: ‘’;
+position: absolute;
+top: -10px; left: 20px; right: 20px;
+height: 20px;
+background: var(–light-parchment);
+clip-path: polygon(0% 100%, 2% 40%, 5% 80%, 8% 20%, 11% 70%, 14% 30%, 17% 75%, 20% 15%, 23% 65%, 26% 35%, 29% 80%, 32% 20%, 35% 70%, 38% 40%, 41% 85%, 44% 25%, 47% 75%, 50% 10%, 53% 70%, 56% 35%, 59% 80%, 62% 20%, 65% 65%, 68% 30%, 71% 75%, 74% 15%, 77% 70%, 80% 35%, 83% 80%, 86% 20%, 89% 65%, 92% 40%, 95% 75%, 98% 30%, 100% 60%, 100% 100%);
+}
+
+/* Scroll curl corners */
+.curl-tl, .curl-tr, .curl-bl, .curl-br {
+position: absolute;
+width: 34px; height: 34px;
+border-radius: 50%;
+background: radial-gradient(circle at 30% 30%, #d4c090, #a08040);
+box-shadow: inset 0 2px 6px rgba(0,0,0,0.3);
+}
+.curl-tl { top: -8px; right: -8px; }
+.curl-tr { top: -8px; left: -8px; }
+.curl-bl { bottom: -8px; right: -8px; }
+.curl-br { bottom: -8px; left: -8px; }
+
+.card-title-ar {
+font-family: ‘Scheherazade New’, serif;
+font-size: clamp(1.8rem, 5vw, 2.8rem);
+font-weight: 700;
+color: var(–mid-brown);
+text-align: center;
+margin-bottom: 20px;
+letter-spacing: 2px;
+}
+
+.divider-ornament {
+text-align: center;
+color: var(–gold);
+font-size: 1.1rem;
+letter-spacing: 10px;
+margin-bottom: 22px;
+display: block;
+}
+
+.card-body-text {
+font-family: ‘Amiri’, serif;
+font-size: 1.1rem;
+line-height: 2.2;
+color: var(–text-dark);
+text-align: justify;
+}
+
+.card-body-text p { margin-bottom: 14px; }
+
+.card-body-text ul {
+list-style: none;
+margin: 12px 0;
+padding: 0;
+}
+.card-body-text ul li {
+padding: 6px 20px 6px 0;
+position: relative;
+border-bottom: 1px solid rgba(160,120,60,0.2);
+}
+.card-body-text ul li::before {
+content: ‘✦’;
+color: var(–gold);
+position: absolute;
+right: 0;
+font-size: 0.7rem;
+top: 10px;
+}
+
+.read-more-btn {
+display: block;
+width: fit-content;
+margin: 24px auto 0;
+padding: 11px 36px;
+background: transparent;
+border: 1.5px solid var(–warm-brown);
+color: var(–mid-brown);
+font-family: ‘Scheherazade New’, serif;
+font-size: 1.1rem;
+font-weight: 700;
+border-radius: 3px;
+cursor: pointer;
+letter-spacing: 1px;
+transition: all 0.3s;
+}
+.read-more-btn:hover {
+background: var(–warm-brown);
+color: var(–cream);
+}
+
+/* ===== QUIZ MODAL ===== */
+.modal-overlay {
+display: none;
+position: fixed;
+inset: 0;
+background: rgba(10,4,0,0.85);
+z-index: 1000;
+justify-content: center;
+align-items: center;
+padding: 20px;
+backdrop-filter: blur(4px);
+}
+.modal-overlay.active { display: flex; }
+
+.modal {
+background: var(–light-parchment);
+border-radius: 6px;
+max-width: 620px;
+width: 100%;
+max-height: 90vh;
+overflow-y: auto;
+position: relative;
+animation: modalIn 0.4s cubic-bezier(0.175,0.885,0.32,1.275);
+border: 1px solid var(–tan);
+box-shadow: 0 30px 80px rgba(0,0,0,0.7), inset 0 0 30px rgba(180,140,80,0.1);
+}
+.modal::before {
+content: ‘’;
+position: absolute;
+top: -10px; left: 20px; right: 20px;
+height: 20px;
+background: var(–light-parchment);
+clip-path: polygon(0% 100%,2% 40%,5% 80%,8% 20%,11% 70%,14% 30%,17% 75%,20% 15%,23% 65%,26% 35%,29% 80%,32% 20%,35% 70%,38% 40%,41% 85%,44% 25%,47% 75%,50% 10%,53% 70%,56% 35%,59% 80%,62% 20%,65% 65%,68% 30%,71% 75%,74% 15%,77% 70%,80% 35%,83% 80%,86% 20%,89% 65%,92% 40%,95% 75%,98% 30%,100% 60%,100% 100%);
+}
+
+@keyframes modalIn {
+from{opacity:0;transform:scale(0.85) translateY(30px)}
+to{opacity:1;transform:scale(1) translateY(0)}
+}
+
+.modal-close {
+position: absolute;
+top: 14px; left: 14px;
+background: var(–mid-brown);
+color: var(–cream);
+border: none;
+width: 34px; height: 34px;
+border-radius: 50%;
+font-size: 1rem;
+cursor: pointer;
+font-weight: bold;
+transition: transform 0.3s;
+z-index: 10;
+display: flex; align-items: center; justify-content: center;
+}
+.modal-close:hover { transform: rotate(90deg); background: var(–dark-brown); }
+
+.modal-header {
+padding: 30px 30px 20px;
+border-bottom: 1px solid rgba(160,120,60,0.3);
+text-align: center;
+}
+.modal-title {
+font-family: ‘Scheherazade New’, serif;
+font-size: 1.8rem;
+font-weight: 700;
+color: var(–mid-brown);
+}
+
+.modal-body { padding: 24px 30px; }
+
+.q-block { margin-bottom: 26px; }
+.q-text {
+font-family: ‘Scheherazade New’, serif;
+font-size: 1.15rem;
+font-weight: 700;
+color: var(–text-dark);
+margin-bottom: 14px;
+line-height: 1.7;
+}
+
+.answers { display: flex; flex-direction: column; gap: 8px; }
+.ans-btn {
+padding: 10px 18px;
+border: 1.5px solid rgba(120,80,30,0.35);
+background: rgba(255,255,255,0.5);
+border-radius: 4px;
+font-family: ‘Amiri’, serif;
+font-size: 1rem;
+cursor: pointer;
+transition: all 0.2s;
+text-align: right;
+color: var(–text-dark);
+}
+.ans-btn:hover { border-color: var(–warm-brown); background: rgba(196,168,130,0.3); transform: translateX(-4px); }
+.ans-btn.correct { background: #e0f0d8; border-color: #5a8040; color: #2a4a10; font-weight: 700; }
+.ans-btn.wrong { background: #f5ddd8; border-color: #9a4030; color: #5a1a10; }
+.ans-btn:disabled { cursor: default; }
+
+.feedback {
+display: none;
+margin-top: 8px;
+padding: 8px 14px;
+border-radius: 4px;
+font-weight: 700;
+font-size: 0.95rem;
+text-align: center;
+}
+.feedback.show { display: block; }
+.feedback.correct { background: #e0f0d8; color: #2a4a10; }
+.feedback.wrong { background: #f5ddd8; color: #5a1a10; }
+
+.score-box {
+display: none;
+text-align: center;
+padding: 18px;
+background: linear-gradient(135deg, var(–mid-brown), var(–dark-brown));
+border-radius: 6px;
+color: var(–tan);
+font-family: ‘Scheherazade New’, serif;
+font-size: 1.3rem;
+font-weight: 700;
+margin-top: 16px;
+border: 1px solid var(–gold);
+}
+.score-box.show { display: block; animation: modalIn 0.4s; }
+
+/* Footer */
+footer {
+position: relative;
+z-index: 10;
+text-align: center;
+padding: 30px;
+border-top: 1px solid rgba(196,168,130,0.2);
+}
+footer p {
+font-family: ‘Scheherazade New’, serif;
+color: rgba(196,168,130,0.6);
+font-size: 1rem;
+letter-spacing: 2px;
+}
+</style>
+
+</head>
+<body>
+
+<!-- LIBRARY BACKGROUND -->
+
+<div class="library-bg">
+  <div class="ceiling"></div>
+  <div class="ceiling-light"></div>
+
+  <!-- LEFT SHELVES -->
+
+  <div class="shelf-left" id="shelfLeft"></div>
+  <!-- RIGHT SHELVES -->
+  <div class="shelf-right" id="shelfRight"></div>
+
+  <!-- CENTER FLOOR -->
+
+  <div class="floor-center"></div>
+  <div class="atmos"></div>
+</div>
+
+<!-- CONTENT -->
+
+<div class="content">
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <svg class="logo-img" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background box -->
+  <rect x="0" y="0" width="300" height="200" rx="16" fill="#e8d8b8" opacity="0.95"/>
+  <!-- Left sword -->
+  <g transform="rotate(-40, 150, 100)">
+    <rect x="140" y="20" width="18" height="120" rx="2" fill="#d4c4a0" stroke="#8a6030" stroke-width="1.5"/>
+    <polygon points="140,20 158,20 149,0" fill="#e8dcc0" stroke="#8a6030" stroke-width="1"/>
+    <rect x="125" y="130" width="48" height="12" rx="3" fill="#c9924a" stroke="#8a6030" stroke-width="1"/>
+    <rect x="143" y="142" width="12" height="30" rx="2" fill="#a07040" stroke="#8a6030" stroke-width="1"/>
+    <ellipse cx="149" cy="172" rx="8" ry="6" fill="#c9924a" stroke="#8a6030" stroke-width="1"/>
+    <!-- blade detail -->
+    <line x1="145" y1="25" x2="145" y2="125" stroke="#f0e8d0" stroke-width="1" opacity="0.6"/>
+    <circle cx="152" cy="50" r="1.5" fill="#8a6030" opacity="0.5"/>
+    <circle cx="148" cy="70" r="1" fill="#8a6030" opacity="0.4"/>
+  </g>
+  <!-- Right sword -->
+  <g transform="rotate(40, 150, 100)">
+    <rect x="140" y="20" width="18" height="120" rx="2" fill="#d4c4a0" stroke="#8a6030" stroke-width="1.5"/>
+    <polygon points="140,20 158,20 149,0" fill="#e8dcc0" stroke="#8a6030" stroke-width="1"/>
+    <rect x="125" y="130" width="48" height="12" rx="3" fill="#c9924a" stroke="#8a6030" stroke-width="1"/>
+    <rect x="143" y="142" width="12" height="30" rx="2" fill="#a07040" stroke="#8a6030" stroke-width="1"/>
+    <ellipse cx="149" cy="172" rx="8" ry="6" fill="#c9924a" stroke="#8a6030" stroke-width="1"/>
+    <line x1="153" y1="25" x2="153" y2="125" stroke="#f0e8d0" stroke-width="1" opacity="0.6"/>
+    <circle cx="146" cy="55" r="1.5" fill="#8a6030" opacity="0.5"/>
+    <circle cx="150" cy="75" r="1" fill="#8a6030" opacity="0.4"/>
+  </g>
+  <!-- Arabic text صليل -->
+  <foreignObject x="10" y="80" width="280" height="80">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="text-align:center;font-family:Scheherazade New,Amiri,serif;font-size:48px;font-weight:700;color:#6a3015;direction:rtl;unicode-bidi:bidi-override;padding:0 10px;">صَلِيْل</div>
+  </foreignObject>
+</svg>
+
+```
+<button class="scroll-btn" onclick="document.querySelector('.stories-section').scrollIntoView({behavior:'smooth'})">
+  ادخل ✦
+</button>
+```
+
+  </section>
+
+  <!-- STORIES -->
+
+  <section class="stories-section">
+
+```
+    <!-- STORY CARD: غزوة بدر -->
+<div class="story-card">
+  <div class="parchment-box">
+    <div class="curl-tl"></div><div class="curl-tr"></div>
+    <div class="curl-bl"></div><div class="curl-br"></div>
+
+    <h2 class="card-title-ar">غزوة بدر الكبرى</h2>
+    <span class="divider-ornament">❧ ✦ ❧</span>
+
+    <div class="card-body-text">
+      <p>في السنة الثانية من الهجرة وقعت غزوة بدر، وهي أول معركة فاصلة بين المسلمين والمشركين.</p>
+      <p>خرج النبي محمد ﷺ مع أصحابه رضي الله عنهم لاعتراض قافلة قريش، لكن الأمر تطوّر إلى مواجهة كبيرة مع جيش قريش الذي جاء بقيادة كبار زعمائهم.</p>
+      <p>كان عدد المسلمين قليلًا (حوالي ثلاثمائة وبضعة عشر رجلًا)، لكنهم كانوا أقوياء بالإيمان والثقة بالله. أما جيش قريش فكان أكبر بكثير ويضم رؤوس الكفر من زعمائهم.</p>
+      <p>قبل المعركة، ثبّت الله قلوب المؤمنين، وأيّدهم بنصرٍ عظيم، ومن ذلك أن الله أنزل الملائكة لمساندتهم:</p>
+      <ul>
+        <li>في البداية: ألف من الملائكة</li>
+        <li>ثم وعد الله المسلمين بالمزيد إن صبروا: ثلاثة آلاف</li>
+        <li>وقد يزاد إلى خمسة آلاف من الملائكة المعلَّمين حسب الثبات والصبر</li>
+      </ul>
+      <p style="font-weight:700; color:var(--mid-brown); margin-top:16px;">أهم رؤوس المشركين الذين قُتلوا في بدر:</p>
+      <ul>
+        <li>أبو جهل (عمرو بن هشام): من أشد أعداء الإسلام</li>
+        <li>عتبة بن ربيعة: من كبار قريش</li>
+        <li>شيبة بن ربيعة</li>
+        <li>الوليد بن عتبة</li>
+        <li>أمية بن خلف: من المعذبين للمسلمين</li>
+      </ul>
+      <p style="margin-top:16px;">انتهت المعركة بنصرٍ عظيم للمسلمين رغم قلة عددهم، وكان درسًا واضحًا أن النصر من عند الله، وأن القوة الحقيقية هي الإيمان والثبات، لا العدد ولا العدة.</p>
+    </div>
+
+    <button class="read-more-btn" onclick="openQuiz()">اختبر معلوماتك ✦</button>
+  </div>
+</div>
+```
+
+  </section>
+
+  <footer>
+    <p>✦ صَلِيل ✦</p>
+  </footer>
+</div>
+
+<!-- QUIZ MODAL -->
+
+<div class="modal-overlay" id="modalOverlay" onclick="closeOnOverlay(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeQuiz()">✕</button>
+    <div class="modal-header">
+      <div class="modal-title">اختبار غزوة بدر</div>
+    </div>
+    <div class="modal-body">
+
+```
+  <div class="q-block">
+    <div class="q-text">١. في أي سنة حدثت غزوة بدر؟</div>
+    <div class="answers" id="ans0">
+      <button class="ans-btn" onclick="check(0,0,1)">السنة الأولى من الهجرة</button>
+      <button class="ans-btn" onclick="check(0,1,1)">السنة الثانية من الهجرة</button>
+      <button class="ans-btn" onclick="check(0,2,1)">السنة الخامسة من الهجرة</button>
+      <button class="ans-btn" onclick="check(0,3,1)">السنة العاشرة من الهجرة</button>
+    </div>
+    <div class="feedback" id="fb0"></div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-text">٢. كم كان عدد المسلمين تقريبًا في المعركة؟</div>
+    <div class="answers" id="ans1">
+      <button class="ans-btn" onclick="check(1,0,2)">تقريبًا ألف رجل</button>
+      <button class="ans-btn" onclick="check(1,1,2)">تقريبًا خمسمائة رجل</button>
+      <button class="ans-btn" onclick="check(1,2,2)">تقريبًا ثلاثمائة رجل</button>
+      <button class="ans-btn" onclick="check(1,3,2)">تقريبًا مائة رجل</button>
+    </div>
+    <div class="feedback" id="fb1"></div>
+  </div>
+
+  <div class="q-block">
+    <div class="q-text">٣. لماذا خرج المسلمون من المدينة في البداية؟</div>
+    <div class="answers" id="ans2">
+      <button class="ans-btn" onclick="check(2,0,1)">لفتح مكة المكرمة</button>
+      <button class="ans-btn" onclick="check(2,1,1)">لاعتراض قافلة قريش</button>
+      <button class="ans-btn" onclick="check(2,2,1)">لزيارة القبائل المجاورة</button>
+      <button class="ans-btn" onclick="check(2,3,1)">للدفاع عن المدينة</button>
+    </div>
+    <div class="feedback" id="fb2"></div>
+  </div>
+
+  <div class="score-box" id="scoreBox"></div>
+</div>
+```
+
+  </div>
+</div>
+
+<script>
+// Logo is now inline SVG
+
+// ===== LIBRARY SHELVES =====
+const bookColors = [
+  '#8B3A2A','#2E5A3A','#4A3870','#7A5020','#1A4A5A',
+  '#6A2A40','#3A5030','#5A4A20','#2A3A5A','#7A3020',
+  '#4A6030','#6A4A30','#3A4A60','#8A5030','#2A5A40',
+  '#5A2A4A','#4A5A20','#7A4A20','#3A2A5A','#5A6020',
+];
+
+function makeShelves(containerId, side) {
+  const container = document.getElementById(containerId);
+  const rows = 10;
+  for (let r = 0; r < rows; r++) {
+    const row = document.createElement('div');
+    row.className = 'books-row';
+    const count = 6 + Math.floor(Math.random()*4);
+    for (let i = 0; i < count; i++) {
+      const book = document.createElement('div');
+      book.className = 'book';
+      const color = bookColors[Math.floor(Math.random()*bookColors.length)];
+      const h = 28 + Math.floor(Math.random()*16);
+      const w = 10 + Math.floor(Math.random()*14);
+      book.style.cssText = `background:${color};height:${h}px;min-width:${w}px;opacity:${0.6+Math.random()*0.4}`;
+      row.appendChild(book);
+    }
+    const board = document.createElement('div');
+    board.className = 'shelf-board';
+    container.appendChild(row);
+    container.appendChild(board);
+  }
+}
+makeShelves('shelfLeft', 'left');
+makeShelves('shelfRight', 'right');
+
+// ===== QUIZ =====
+const correct = [1, 2, 1]; // correct answer index per question
+let answered = [];
+
+function check(qIdx, aIdx, correctIdx) {
+  if (answered.includes(qIdx)) return;
+  answered.push(qIdx);
+
+  const btns = document.querySelectorAll(`#ans${qIdx} .ans-btn`);
+  const fb = document.getElementById(`fb${qIdx}`);
+  btns.forEach(b => b.disabled = true);
+  btns[correctIdx].classList.add('correct');
+  fb.classList.add('show');
+
+  if (aIdx === correctIdx) {
+    fb.textContent = '✦ أحسنت! إجابة صحيحة';
+    fb.classList.add('correct');
+  } else {
+    btns[aIdx].classList.add('wrong');
+    fb.textContent = '✗ ليست الإجابة الصحيحة';
+    fb.classList.add('wrong');
+  }
+
+  if (answered.length === 3) {
+    const score = answered.filter((qi, i) => {
+      const btns2 = document.querySelectorAll(`#ans${qi} .ans-btn`);
+      return Array.from(btns2).some(b => b.classList.contains('correct') && !b.classList.contains('wrong'));
+    }).length;
+    const msgs = ['حاول مجددًا', 'جيد', 'ممتاز! ✦', 'مثالي! بطل المعارك ✦'];
+    const scoreBox = document.getElementById('scoreBox');
+    scoreBox.innerHTML = `نتيجتك: ${score} / 3<br><small style="font-size:1rem;opacity:0.8">${msgs[score]}</small>`;
+    scoreBox.classList.add('show');
+  }
+}
+
+function openQuiz() {
+  document.getElementById('modalOverlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeQuiz() {
+  document.getElementById('modalOverlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function closeOnOverlay(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeQuiz();
+}
+</script>
+
+</body>
+</html>
