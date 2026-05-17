@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
@@ -25,27 +24,27 @@ body { font-family:'Amiri',serif; background:var(--dark-brown); overflow-x:hidde
 
 /* ===== LIBRARY BG ===== */
 .lib-bg {
-position:fixed; inset:0; z-index:0; overflow:hidden;
-background: #1a0a04;
+  position:fixed; inset:0; z-index:0; overflow:hidden;
+  background: #1a0a04;
 }
 .books-left, .books-right {
-position:absolute; top:0; bottom:0; width:22%;
-display:flex; flex-direction:column;
+  position:absolute; top:0; bottom:0; width:22%;
+  display:flex; flex-direction:column;
 }
 .books-left { left:0; }
 .books-right { right:0; }
 .floor {
-position:absolute; bottom:0; left:50%; transform:translateX(-50%);
-width:56%; height:28%;
-background: linear-gradient(180deg, #c4956a, #7a5030);
-clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+  position:absolute; bottom:0; left:50%; transform:translateX(-50%);
+  width:56%; height:28%;
+  background: linear-gradient(180deg, #c4956a, #7a5030);
+  clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
 }
 .ceiling-light {
-position:absolute; top:5%; left:50%; transform:translateX(-50%);
-width:180px; height:14px;
-background:rgba(255,240,180,0.25);
-border-radius:50%;
-box-shadow: 0 0 80px 40px rgba(255,220,120,0.15), 0 0 160px 100px rgba(255,200,80,0.08);
+  position:absolute; top:5%; left:50%; transform:translateX(-50%);
+  width:180px; height:14px;
+  background:rgba(255,240,180,0.25);
+  border-radius:50%;
+  box-shadow: 0 0 80px 40px rgba(255,220,120,0.15), 0 0 160px 100px rgba(255,200,80,0.08);
 }
 
 /* ===== PAGES ===== */
@@ -54,263 +53,261 @@ box-shadow: 0 0 80px 40px rgba(255,220,120,0.15), 0 0 160px 100px rgba(255,200,8
 
 /* ===== SPLASH PAGE ===== */
 #splashPage {
-align-items:center; justify-content:center;
-background:transparent;
+  align-items:center; justify-content:center;
+  background:transparent;
 }
 .splash-logo {
-width: min(85vw, 400px);
-height: auto;
-filter: drop-shadow(0 10px 40px rgba(0,0,0,0.8));
-animation: logoFloat 5s ease-in-out infinite;
-cursor: pointer;
+  width: min(85vw, 400px);
+  height: auto;
+  filter: drop-shadow(0 10px 40px rgba(0,0,0,0.8));
+  animation: logoFloat 5s ease-in-out infinite;
+  cursor: pointer;
 }
 @keyframes logoFloat {
-0%,100%{transform:translateY(0)}
-50%{transform:translateY(-14px)}
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-14px)}
 }
 .splash-tap {
-color:rgba(196,168,130,0.6);
-font-family:‘Scheherazade New’,serif;
-font-size:1.1rem;
-margin-top:30px;
-animation:pulse 2s infinite;
-letter-spacing:3px;
+  color:rgba(196,168,130,0.6);
+  font-family:'Scheherazade New',serif;
+  font-size:1.1rem;
+  margin-top:30px;
+  animation:pulse 2s infinite;
+  letter-spacing:3px;
 }
 @keyframes pulse {
-0%,100%{opacity:0.4} 50%{opacity:1}
+  0%,100%{opacity:0.4} 50%{opacity:1}
 }
 
 /* ===== MENU PAGE ===== */
 #menuPage { background:transparent; }
 .menu-header {
-padding:20px;
-text-align:center;
-border-bottom:1px solid rgba(196,168,130,0.2);
-background:rgba(20,8,2,0.6);
+  padding:20px;
+  text-align:center;
+  border-bottom:1px solid rgba(196,168,130,0.2);
+  background:rgba(20,8,2,0.6);
 }
 .menu-logo-small {
-width:100px; height:auto;
-filter: drop-shadow(0 4px 12px rgba(0,0,0,0.6));
+  width:100px; height:auto;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.6));
 }
 .menu-content {
-flex:1; overflow-y:auto; padding:24px 20px;
-background:#f5ecd8;
+  flex:1; overflow-y:auto; padding:24px 20px;
+  background:#f5ecd8;
 }
 .menu-title {
-font-family:‘Scheherazade New’,serif;
-color:#2c1a0e;
-font-size:1.6rem;
-font-weight:700;
-text-align:center;
-margin-bottom:6px;
-letter-spacing:3px;
+  font-family:'Scheherazade New',serif;
+  color:#2c1a0e;
+  font-size:1.6rem;
+  font-weight:700;
+  text-align:center;
+  margin-bottom:6px;
+  letter-spacing:3px;
 }
 .menu-sub {
-color:#7a6050;
-font-size:0.9rem;
-text-align:center;
-margin-bottom:24px;
-font-style:italic;
+  color:#7a6050;
+  font-size:0.9rem;
+  text-align:center;
+  margin-bottom:24px;
+  font-style:italic;
 }
 .gold-line {
-width:120px; height:1px;
-background:linear-gradient(90deg,transparent,var(–gold),transparent);
-margin:0 auto 28px;
+  width:120px; height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  margin:0 auto 28px;
 }
 
 .ghazwa-card {
-background:#f5ecd8;
-border-radius:12px;
-margin-bottom:16px;
-overflow:hidden;
-box-shadow:0 4px 20px rgba(0,0,0,0.5);
-border:1px solid rgba(201,146,74,0.3);
-cursor:pointer;
-transition:transform 0.3s, box-shadow 0.3s;
-position:relative;
+  background:#f5ecd8;
+  border-radius:12px;
+  margin-bottom:16px;
+  overflow:hidden;
+  box-shadow:0 4px 20px rgba(0,0,0,0.5);
+  border:1px solid rgba(201,146,74,0.3);
+  cursor:pointer;
+  transition:transform 0.3s, box-shadow 0.3s;
+  position:relative;
 }
 .ghazwa-card:hover { transform:translateY(-4px); box-shadow:0 12px 40px rgba(0,0,0,0.6); }
 
 /* Torn top edge */
 .ghazwa-card::before {
-content:’’; position:absolute; top:-6px; left:10px; right:10px; height:12px;
-background:var(–parchment);
-clip-path:polygon(0% 100%,2% 40%,5% 80%,8% 20%,11% 70%,14% 30%,17% 75%,20% 15%,25% 65%,30% 35%,35% 80%,40% 20%,45% 70%,50% 10%,55% 70%,60% 35%,65% 80%,70% 20%,75% 65%,80% 30%,85% 75%,88% 15%,91% 70%,94% 40%,97% 75%,100% 50%,100% 100%);
+  content:''; position:absolute; top:-6px; left:10px; right:10px; height:12px;
+  background:var(--parchment);
+  clip-path:polygon(0% 100%,2% 40%,5% 80%,8% 20%,11% 70%,14% 30%,17% 75%,20% 15%,25% 65%,30% 35%,35% 80%,40% 20%,45% 70%,50% 10%,55% 70%,60% 35%,65% 80%,70% 20%,75% 65%,80% 30%,85% 75%,88% 15%,91% 70%,94% 40%,97% 75%,100% 50%,100% 100%);
 }
 
 .card-inner { padding:20px 22px 18px; }
 .card-number {
-font-family:‘Scheherazade New’,serif;
-font-size:0.8rem;
-color:var(–gold);
-letter-spacing:2px;
-margin-bottom:4px;
+  font-family:'Scheherazade New',serif;
+  font-size:0.8rem;
+  color:var(--gold);
+  letter-spacing:2px;
+  margin-bottom:4px;
 }
 .card-name {
-font-family:‘Scheherazade New’,serif;
-font-size:1.6rem;
-font-weight:700;
-color:var(–mid-brown);
-margin-bottom:6px;
+  font-family:'Scheherazade New',serif;
+  font-size:1.6rem;
+  font-weight:700;
+  color:var(--mid-brown);
+  margin-bottom:6px;
 }
 .card-year {
-font-size:0.9rem;
-color:#7a6050;
-margin-bottom:12px;
+  font-size:0.9rem;
+  color:#7a6050;
+  margin-bottom:12px;
 }
 .card-desc {
-font-size:0.95rem;
-color:#4a3020;
-line-height:1.8;
+  font-size:0.95rem;
+  color:#4a3020;
+  line-height:1.8;
 }
 .card-arrow {
-position:absolute;
-left:18px; top:50%;
-transform:translateY(-50%);
-color:var(–gold);
-font-size:1.4rem;
+  position:absolute;
+  left:18px; top:50%;
+  transform:translateY(-50%);
+  color:var(--gold);
+  font-size:1.4rem;
 }
 
 /* ===== STORY PAGE ===== */
 #storyPage { background:transparent; overflow:hidden; }
 .story-header {
-padding:14px 16px;
-display:flex;
-align-items:center;
-gap:12px;
-border-bottom:1px solid rgba(196,168,130,0.2);
-background:rgba(20,8,2,0.5);
+  padding:14px 16px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  border-bottom:1px solid rgba(196,168,130,0.2);
+  background:rgba(20,8,2,0.5);
 }
 .back-btn {
-background:transparent;
-border:1px solid var(–gold);
-color:var(–tan);
-font-family:‘Amiri’,serif;
-font-size:0.95rem;
-padding:6px 14px;
-border-radius:4px;
-cursor:pointer;
-transition:all 0.2s;
-white-space:nowrap;
+  background:transparent;
+  border:1px solid var(--gold);
+  color:var(--tan);
+  font-family:'Amiri',serif;
+  font-size:0.95rem;
+  padding:6px 14px;
+  border-radius:4px;
+  cursor:pointer;
+  transition:all 0.2s;
+  white-space:nowrap;
 }
-.back-btn:hover { background:var(–gold); color:var(–dark-brown); }
+.back-btn:hover { background:var(--gold); color:var(--dark-brown); }
 .story-header-title {
-font-family:‘Scheherazade New’,serif;
-color:var(–tan);
-font-size:1.2rem;
-font-weight:700;
-flex:1;
-text-align:center;
+  font-family:'Scheherazade New',serif;
+  color:var(--tan);
+  font-size:1.2rem;
+  font-weight:700;
+  flex:1;
+  text-align:center;
 }
 
 .story-content { flex:1; overflow-y:auto; padding:20px 16px 40px; background:#f5ecd8; }
 
 .parchment-section {
-background:transparent;
-border-radius:10px;
-padding:24px 20px;
-margin-bottom:20px;
-position:relative;
+  background:transparent;
+  border-radius:10px;
+  padding:24px 20px;
+  margin-bottom:20px;
+  position:relative;
 }
 .parchment-section::before {
-content:’’; position:absolute; top:-6px; left:10px; right:10px; height:12px;
-background:var(–parchment);
-clip-path:polygon(0% 100%,2% 40%,5% 80%,8% 20%,11% 70%,14% 30%,17% 75%,20% 15%,25% 65%,30% 35%,35% 80%,40% 20%,45% 70%,50% 10%,55% 70%,60% 35%,65% 80%,70% 20%,75% 65%,80% 30%,85% 75%,88% 15%,91% 70%,94% 40%,97% 75%,100% 50%,100% 100%);
+  content:''; position:absolute; top:-6px; left:10px; right:10px; height:12px;
+  background:var(--parchment);
+  clip-path:polygon(0% 100%,2% 40%,5% 80%,8% 20%,11% 70%,14% 30%,17% 75%,20% 15%,25% 65%,30% 35%,35% 80%,40% 20%,45% 70%,50% 10%,55% 70%,60% 35%,65% 80%,70% 20%,75% 65%,80% 30%,85% 75%,88% 15%,91% 70%,94% 40%,97% 75%,100% 50%,100% 100%);
 }
 
 .section-title {
-font-family:‘Scheherazade New’,serif;
-font-size:1.8rem;
-font-weight:700;
-color:#2c1a0e;
-text-align:center;
-margin-bottom:14px;
+  font-family:'Scheherazade New',serif;
+  font-size:1.8rem;
+  font-weight:700;
+  color:#2c1a0e;
+  text-align:center;
+  margin-bottom:14px;
 }
 .ornament {
-text-align:center;
-color:var(–gold);
-font-size:1rem;
-letter-spacing:8px;
-margin-bottom:16px;
+  text-align:center;
+  color:var(--gold);
+  font-size:1rem;
+  letter-spacing:8px;
+  margin-bottom:16px;
 }
 .story-text {
-font-size:1.05rem;
-line-height:2.1;
-color:#2c1a0e;
-text-align:justify;
+  font-size:1.05rem;
+  line-height:2.1;
+  color:#2c1a0e;
+  text-align:justify;
 }
 .story-text p { margin-bottom:14px; }
 
 .quiz-section {
-background:transparent;
-border-radius:10px;
-padding:20px;
+  background:transparent;
+  border-radius:10px;
+  padding:20px;
 }
 .quiz-title {
-font-family:‘Scheherazade New’,serif;
-font-size:1.4rem;
-font-weight:700;
-color:#2c1a0e;
-text-align:center;
-margin-bottom:20px;
+  font-family:'Scheherazade New',serif;
+  font-size:1.4rem;
+  font-weight:700;
+  color:#2c1a0e;
+  text-align:center;
+  margin-bottom:20px;
 }
 .q-block { margin-bottom:22px; }
 .q-text {
-font-family:‘Scheherazade New’,serif;
-font-size:1.05rem;
-font-weight:700;
-color:#2c1a0e;
-margin-bottom:12px;
-line-height:1.7;
+  font-family:'Scheherazade New',serif;
+  font-size:1.05rem;
+  font-weight:700;
+  color:#2c1a0e;
+  margin-bottom:12px;
+  line-height:1.7;
 }
 .answers { display:flex; flex-direction:column; gap:8px; }
 .ans-btn {
-padding:10px 16px;
-border:1.5px solid rgba(120,80,30,0.3);
-background:white;
-border-radius:6px;
-font-family:‘Amiri’,serif;
-font-size:1rem;
-cursor:pointer;
-transition:all 0.2s;
-text-align:right;
-color:#2c1a0e;
+  padding:10px 16px;
+  border:1.5px solid rgba(120,80,30,0.3);
+  background:white;
+  border-radius:6px;
+  font-family:'Amiri',serif;
+  font-size:1rem;
+  cursor:pointer;
+  transition:all 0.2s;
+  text-align:right;
+  color:#2c1a0e;
 }
-.ans-btn:hover { border-color:var(–warm-brown); background:#fdf5e8; }
+.ans-btn:hover { border-color:var(--warm-brown); background:#fdf5e8; }
 .ans-btn.correct { background:#e0f0d8; border-color:#5a8040; color:#1a4010; font-weight:700; }
 .ans-btn.wrong { background:#f8e0dc; border-color:#9a4030; color:#4a1010; }
 .ans-btn:disabled { cursor:default; }
 .feedback {
-display:none; margin-top:8px; padding:8px 14px;
-border-radius:6px; font-weight:700; font-size:0.95rem; text-align:center;
+  display:none; margin-top:8px; padding:8px 14px;
+  border-radius:6px; font-weight:700; font-size:0.95rem; text-align:center;
 }
 .feedback.show { display:block; }
 .feedback.correct { background:#e0f0d8; color:#1a4010; }
 .feedback.wrong { background:#f8e0dc; color:#4a1010; }
 .score-box {
-display:none; text-align:center; padding:16px;
-background:linear-gradient(135deg,var(–mid-brown),var(–dark-brown));
-border-radius:8px; color:var(–tan);
-font-family:‘Scheherazade New’,serif;
-font-size:1.2rem; font-weight:700; margin-top:16px;
-border:1px solid var(–gold);
+  display:none; text-align:center; padding:16px;
+  background:linear-gradient(135deg,var(--mid-brown),var(--dark-brown));
+  border-radius:8px; color:var(--tan);
+  font-family:'Scheherazade New',serif;
+  font-size:1.2rem; font-weight:700; margin-top:16px;
+  border:1px solid var(--gold);
 }
 .score-box.show { display:block; }
 
 @keyframes fadeUp {
-from{opacity:0;transform:translateY(20px)}
-to{opacity:1;transform:translateY(0)}
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
 }
 .page.active .parchment-section,
 .page.active .quiz-section,
 .page.active .ghazwa-card { animation:fadeUp 0.4s ease both; }
 </style>
-
 </head>
 <body>
 
 <!-- LIBRARY BACKGROUND -->
-
 <div class="lib-bg">
   <div class="books-left" id="shelfLeft"></div>
   <div class="books-right" id="shelfRight"></div>
@@ -319,14 +316,12 @@ to{opacity:1;transform:translateY(0)}
 </div>
 
 <!-- ===== SPLASH PAGE ===== -->
-
 <div class="page active" id="splashPage">
   <img class="splash-logo" id="splashLogo" src="" alt="صليل">
   <p class="splash-tap" onclick="goToMenu()" style="cursor:pointer;font-size:1.3rem;padding:16px 30px;border:1px solid rgba(196,168,130,0.4);border-radius:6px;margin-top:20px;">✦ اضغط للدخول ✦</p>
 </div>
 
 <!-- ===== MENU PAGE ===== -->
-
 <div class="page" id="menuPage">
   <div class="menu-header">
     <img class="menu-logo-small" id="menuLogo" src="" alt="صليل">
@@ -336,29 +331,82 @@ to{opacity:1;transform:translateY(0)}
     <p class="menu-sub">اختر غزوة واقرأ قصتها</p>
     <div class="gold-line"></div>
 
-```
-<div class="ghazwa-card" onclick="openStory(0)">
-  <div class="card-inner">
-    <div class="card-number">الغزوة الأولى ✦</div>
-    <div class="card-name">غزوة بدر الكبرى</div>
-  </div>
-  <span class="card-arrow">←</span>
-</div>
+    <div class="ghazwa-card" onclick="openStory(0)">
+      <div class="card-inner">
+        <div class="card-number">الغزوة الأولى ✦</div>
+        <div class="card-name">غزوة بدر الكبرى</div>
+      </div>
+      <span class="card-arrow">←</span>
+    </div>
 
-<div class="ghazwa-card" onclick="openStory(1)">
-  <div class="card-inner">
-    <div class="card-number">الغزوة الثانية ✦</div>
-    <div class="card-name">غزوة أُحد</div>
-  </div>
-  <span class="card-arrow">←</span>
-</div>
-```
+    <div class="ghazwa-card" onclick="openStory(1)">
+      <div class="card-inner">
+        <div class="card-number">الغزوة الثانية ✦</div>
+        <div class="card-name">غزوة بني النضير</div>
+      </div>
+      <span class="card-arrow">←</span>
+    </div>
+
+    <div class="ghazwa-card" onclick="openStory(2)">
+      <div class="card-inner">
+        <div class="card-number">الغزوة الثالثة ✦</div>
+        <div class="card-name">غزوة الخندق</div>
+      </div>
+      <span class="card-arrow">←</span>
+    </div>
+
+    <div class="ghazwa-card" onclick="openStory(3)">
+      <div class="card-inner">
+        <div class="card-number">الغزوة الرابعة ✦</div>
+        <div class="card-name">غزوة بني قريظة</div>
+      </div>
+      <span class="card-arrow">←</span>
+    </div>
+
+    <div class="ghazwa-card" onclick="openStory(4)">
+      <div class="card-inner">
+        <div class="card-number">الغزوة الخامسة ✦</div>
+        <div class="card-name">غزوة خيبر</div>
+      </div>
+      <span class="card-arrow">←</span>
+    </div>
+
+    <div class="ghazwa-card" onclick="openStory(5)">
+      <div class="card-inner">
+        <div class="card-number">الغزوة السادسة ✦</div>
+        <div class="card-name">فتح مكة</div>
+      </div>
+      <span class="card-arrow">←</span>
+    </div>
+
+    <div class="ghazwa-card" onclick="openStory(6)">
+      <div class="card-inner">
+        <div class="card-number">الغزوة السابعة ✦</div>
+        <div class="card-name">غزوة حنين</div>
+      </div>
+      <span class="card-arrow">←</span>
+    </div>
+
+    <div class="ghazwa-card" onclick="openStory(7)">
+      <div class="card-inner">
+        <div class="card-number">الغزوة الثامنة ✦</div>
+        <div class="card-name">غزوة تبوك</div>
+      </div>
+      <span class="card-arrow">←</span>
+    </div>
+
+    <div class="ghazwa-card" onclick="openStory(8)">
+      <div class="card-inner">
+        <div class="card-number">الغزوة التاسعة ✦</div>
+        <div class="card-name">غزوة أُحد</div>
+      </div>
+      <span class="card-arrow">←</span>
+    </div>
 
   </div>
 </div>
 
 <!-- ===== STORY PAGE ===== -->
-
 <div class="page" id="storyPage">
   <div class="story-header">
     <button class="back-btn" onclick="goToMenu()">→ القائمة</button>
@@ -373,55 +421,91 @@ const stories = [
   {
     title: "غزوة بدر الكبرى",
     year: "السنة الثانية من الهجرة",
-    text: `<p>في السنة الثانية من الهجرة وقعت غزوة بدر، وهي أول معركة فاصلة بين المسلمين والمشركين.</p>
-<p>خرج النبي محمد ﷺ مع أصحابه رضي الله عنهم لاعتراض قافلة قريش، لكن الأمر تطوّر إلى مواجهة كبيرة مع جيش قريش الذي جاء بقيادة كبار زعمائهم.</p>
-<p>كان عدد المسلمين قليلًا (حوالي ثلاثمائة وبضعة عشر رجلًا)، لكنهم كانوا أقوياء بالإيمان والثقة بالله. أما جيش قريش فكان أكبر بكثير ويضم رؤوس الكفر من زعمائهم الذين عذبوا المسلمين وآذوهم في مكة.</p>
-<p>قبل المعركة، ثبّت الله قلوب المؤمنين، وأيّدهم بنصرٍ عظيم، ومن ذلك أن الله أنزل الملائكة لمساندتهم: ألف ملك في البداية، ثم ثلاثة آلاف، وقد يزاد إلى خمسة آلاف من الملائكة المعلَّمين.</p>
-<p>أهم رؤوس المشركين الذين قُتلوا في بدر: أبو جهل، عتبة بن ربيعة، شيبة بن ربيعة، الوليد بن عتبة، وأمية بن خلف.</p>
-<p>انتهت المعركة بنصرٍ عظيم للمسلمين رغم قلة عددهم، وكان درسًا واضحًا أن النصر من عند الله، وأن القوة الحقيقية هي الإيمان والثبات، لا العدد ولا العدة.</p>`,
+    text: `<p>في السنة الثانية من الهجرة وقعت غزوة بدر، وهي أول معركة فاصلة بين المسلمين والمشركين.</p><p>خرج النبي محمد ﷺ مع أصحابه رضي الله عنهم لاعتراض قافلة قريش، لكن الأمر تطوّر إلى مواجهة كبيرة مع جيش قريش.</p><p>كان عدد المسلمين حوالي ثلاثمائة وبضعة عشر رجلًا، لكنهم كانوا أقوياء بالإيمان. أنزل الله الملائكة لمساندتهم وانتصر المسلمون رغم قلة عددهم.</p><p>كان درسًا واضحًا أن النصر من عند الله، وأن القوة الحقيقية هي الإيمان والثبات لا العدد ولا العدة.</p>`,
     questions: [
-      {
-        q: "١. في أي سنة حدثت غزوة بدر؟",
-        answers: ["السنة الأولى من الهجرة","السنة الثانية من الهجرة","السنة الخامسة من الهجرة","السنة العاشرة من الهجرة"],
-        correct: 1
-      },
-      {
-        q: "٢. كم كان عدد المسلمين تقريبًا في المعركة؟",
-        answers: ["تقريبًا ألف رجل","تقريبًا خمسمائة رجل","تقريبًا ثلاثمائة رجل","تقريبًا مائة رجل"],
-        correct: 2
-      },
-      {
-        q: "٣. لماذا خرج المسلمون من المدينة في البداية؟",
-        answers: ["لفتح مكة المكرمة","لاعتراض قافلة قريش","لزيارة القبائل المجاورة","للدفاع عن المدينة"],
-        correct: 1
-      }
+      { q: "١. في أي سنة حدثت غزوة بدر؟", answers: ["السنة الأولى من الهجرة","السنة الثانية من الهجرة","السنة الخامسة من الهجرة","السنة العاشرة من الهجرة"], correct: 1 },
+      { q: "٢. كم كان عدد المسلمين تقريبًا في المعركة؟", answers: ["تقريبًا ألف رجل","تقريبًا خمسمائة رجل","تقريبًا ثلاثمائة رجل","تقريبًا مائة رجل"], correct: 2 },
+      { q: "٣. لماذا خرج المسلمون من المدينة في البداية؟", answers: ["لفتح مكة المكرمة","لاعتراض قافلة قريش","لزيارة القبائل المجاورة","للدفاع عن المدينة"], correct: 1 }
     ]
   },
   {
     title: "غزوة أُحد",
     year: "السنة الثالثة من الهجرة",
-    text: `<p>وقعت غزوة أُحد في السنة الثالثة للهجرة، قرب جبل أُحد في المدينة المنورة.</p>
-<p>كان سببها أنَّ كفار قريش أرادوا الانتقام من المسلمين بعد هزيمتهم في غزوة بدر، فجمعوا جيشًا كبيرًا بقيادة أبو سفيان بن حرب واتجهوا إلى المدينة.</p>
-<p>خرج النبي ﷺ مع الصحابة للدفاع عن المسلمين، وكان عدد المسلمين أقل من عدد المشركين. وقبل بدء القتال، وضع النبي ﷺ مجموعة من الرماة على جبل الرماة، وأمرهم ألّا يتركوا أماكنهم مهما حدث.</p>
-<p>في بداية المعركة انتصر المسلمون، وبدأ المشركون بالتراجع، لكن بعض الرماة نزلوا من الجبل ظنًّا أن المعركة انتهت، فرآهم خالد بن الوليد وانتهز الفرصة فالتفّ من خلف الجبل وهاجم المسلمين من الخلف، وتغيّر سير المعركة.</p>
-<p>وخلال القتال أُصيب النبي ﷺ بجروح، واستشهد عدد من الصحابة، منهم حمزة بن عبد المطلب رضي الله عنه.</p>
-<p>ورغم صعوبة المعركة، تعلّم المسلمون درسًا مهمًّا، وهو ضرورة طاعة أوامر النبي ﷺ وعدم مخالفتها. وكانت غزوة أُحد مثالًا على الصبر والثبات والشجاعة.</p>`,
+    text: `<p>وقعت غزوة أُحد في السنة الثالثة للهجرة قرب جبل أُحد. أراد كفار قريش الانتقام بعد هزيمتهم في بدر، فجمعوا جيشًا كبيرًا بقيادة أبي سفيان.</p><p>وضع النبي ﷺ الرماة على جبل الرماة وأمرهم ألّا يتركوا أماكنهم. في البداية انتصر المسلمون، لكن بعض الرماة نزلوا فالتفّ خالد بن الوليد وهاجم من الخلف.</p><p>أُصيب النبي ﷺ بجروح، واستشهد حمزة بن عبد المطلب رضي الله عنه. كانت الغزوة درسًا في ضرورة طاعة أوامر النبي ﷺ.</p>`,
     questions: [
-      {
-        q: "١. لماذا خرجت قريش لقتال المسلمين في غزوة أُحد؟",
-        answers: ["لنشر التجارة","للانتقام بعد غزوة بدر","لعقد صلح مع المسلمين","لأخذ الجزية"],
-        correct: 1
-      },
-      {
-        q: "٢. ماذا حدث عندما ترك بعض الرماة أماكنهم؟",
-        answers: ["انتصر المسلمون","توقفت المعركة","هاجم المشركون المسلمين من الخلف","أسلم المشركون"],
-        correct: 2
-      },
-      {
-        q: "٣. من هو الصحابي الذي استشهد في غزوة أُحد ولُقّب بأسد الله؟",
-        answers: ["أبو بكر الصديق","حمزة بن عبد المطلب","عثمان بن عفان","علي بن أبي طالب"],
-        correct: 1
-      }
+      { q: "١. لماذا خرجت قريش لقتال المسلمين في غزوة أُحد؟", answers: ["لنشر التجارة","للانتقام بعد غزوة بدر","لعقد صلح","لأخذ الجزية"], correct: 1 },
+      { q: "٢. ماذا حدث عندما ترك بعض الرماة أماكنهم؟", answers: ["انتصر المسلمون","توقفت المعركة","هاجم المشركون المسلمين من الخلف","أسلم المشركون"], correct: 2 },
+      { q: "٣. من هو الصحابي الذي استشهد في غزوة أُحد ولُقّب بأسد الله؟", answers: ["أبو بكر الصديق","حمزة بن عبد المطلب","عثمان بن عفان","علي بن أبي طالب"], correct: 1 }
+    ]
+  },
+  {
+    title: "غزوة بني النضير",
+    year: "السنة الرابعة من الهجرة",
+    text: `<p>غزوة بني النضير حدثت في السنة الرابعة للهجرة بين المسلمين وقبيلة بني النضير من يهود المدينة.</p><p>سبب الغزوة أن بني النضير نقضوا العهد مع المسلمين، وحاولوا اغتيال النبي ﷺ عندما ذهب إليهم يطلب مساعدتهم في دية قتيلين.</p><p>أمر النبي ﷺ بحصارهم في حصونهم، واستمر الحصار عدة أيام حتى اضطروا للاستسلام، ووافقوا على الخروج من المدينة وترك أموالهم وأسلحتهم.</p><p>كانت هذه الغزوة درسًا في أهمية الوفاء بالعهود وعدم الغدر.</p>`,
+    questions: [
+      { q: "١. متى حدثت غزوة بني النضير؟", answers: ["السنة الثانية للهجرة","السنة الرابعة للهجرة","السنة السادسة للهجرة","السنة الثامنة للهجرة"], correct: 1 },
+      { q: "٢. ما سبب غزوة بني النضير؟", answers: ["اختلاف على التجارة","الرغبة في الهجرة","محاولة اغتيال النبي ﷺ ونقض العهد","طلب المساعدة"], correct: 2 },
+      { q: "٣. ماذا كانت نتيجة غزوة بني النضير؟", answers: ["انتصار قريش","خروج بني النضير من المدينة","انتقال المسلمين إلى مكة","عقد صلح جديد فقط"], correct: 1 }
+    ]
+  },
+  {
+    title: "غزوة الخندق",
+    year: "السنة الخامسة من الهجرة",
+    text: `<p>تُسمى أيضًا غزوة الأحزاب، ووقعت في السنة الخامسة للهجرة. اجتمعت قبائل قريش وغطفان وبعض اليهود لمحاربة المسلمين في المدينة.</p><p>اقترح الصحابي سلمان الفارسي حفر خندق حول المدينة، وشارك النبي ﷺ بنفسه في الحفر. عانى المسلمون من الجوع والبرد والخوف أثناء الحصار.</p><p>استمر الحصار أسابيع لكن المشركين لم يستطيعوا عبور الخندق. وفي النهاية أرسل الله ريحًا شديدة فرّقت الأحزاب فعادوا خائبين.</p>`,
+    questions: [
+      { q: "١. ما الاسم الآخر لغزوة الخندق؟", answers: ["غزوة بدر","غزوة الأحزاب","غزوة أحد","غزوة خيبر"], correct: 1 },
+      { q: "٢. لماذا لم يستطع المشركون دخول المدينة؟", answers: ["لأنهم خافوا","لأن المسلمين حفروا خندقًا حول المدينة","لأن الريح أوقفتهم قبل الوصول","لأنهم لم يجدوا طريقًا"], correct: 1 },
+      { q: "٣. من هو الصحابي الذي أشار بحفر الخندق؟", answers: ["أبو بكر الصديق","عمر بن الخطاب","سلمان الفارسي","خالد بن الوليد"], correct: 2 }
+    ]
+  },
+  {
+    title: "غزوة بني قريظة",
+    year: "السنة الخامسة من الهجرة",
+    text: `<p>غزوة بني قريظة حدثت في السنة الخامسة للهجرة بعد غزوة الخندق مباشرة، بين المسلمين وقبيلة بني قريظة من يهود المدينة.</p><p>سبب الغزوة أن بني قريظة نقضوا العهد مع المسلمين أثناء غزوة الخندق وتحالفوا مع الأحزاب، مما اعتُبر خيانة واضحة.</p><p>بعد انتهاء غزوة الخندق حاصر النبي ﷺ بني قريظة في حصونهم حتى استسلموا، وحُكم فيهم بما حكم به سعد بن معاذ رضي الله عنه.</p><p>كانت درسًا في خطورة نقض العهود وأهمية الثبات في الأزمات.</p>`,
+    questions: [
+      { q: "١. متى حدثت غزوة بني قريظة؟", answers: ["السنة الثانية للهجرة","السنة الثالثة للهجرة","السنة الخامسة للهجرة","السنة الثامنة للهجرة"], correct: 2 },
+      { q: "٢. ما سبب غزوة بني قريظة؟", answers: ["الرغبة في التجارة","نقض العهد والتحالف مع الأحزاب","الهجرة إلى مكة","طلب الصلح"], correct: 1 },
+      { q: "٣. من الذي حكم في بني قريظة؟", answers: ["أبو بكر الصديق","علي بن أبي طالب","عمر بن الخطاب","سعد بن معاذ"], correct: 3 }
+    ]
+  },
+  {
+    title: "غزوة خيبر",
+    year: "السنة السابعة من الهجرة",
+    text: `<p>غزوة خيبر وقعت في السنة السابعة للهجرة بين المسلمين ويهود خيبر. وخيبر واحة غنية شمال المدينة فيها حصون كثيرة منيعة.</p><p>حاصر النبي ﷺ الحصون واحداً تلو الآخر، وأظهر الصحابة شجاعة نادرة. وعلى يد علي بن أبي طالب رضي الله عنه فتح الله حصن القموص.</p><p>انتهت المعركة بانتصار المسلمين، وطلب اليهود الصلح على أن يبقوا في أراضيهم مقابل نصف ثمارها فوافق النبي ﷺ.</p>`,
+    questions: [
+      { q: "١. في أي عام وقعت غزوة خيبر؟", answers: ["العام الخامس للهجرة","العام السابع للهجرة","العام التاسع للهجرة","العام الحادي عشر للهجرة"], correct: 1 },
+      { q: "٢. من هو الصحابي الذي سلّمه النبي ﷺ الراية؟", answers: ["عمر بن الخطاب","خالد بن الوليد","علي بن أبي طالب","أبو عبيدة بن الجراح"], correct: 2 },
+      { q: "٣. على أي شرط تم الاتفاق في صلح خيبر؟", answers: ["مغادرة اليهود فوراً","بقاء اليهود في أراضيهم مقابل نصف الثمار","دخول جميع أهل خيبر في الإسلام","دفع جزية مالية ثابتة"], correct: 1 }
+    ]
+  },
+  {
+    title: "فتح مكة",
+    year: "السنة الثامنة من الهجرة",
+    text: `<p>اتفق النبي ﷺ مع قريش في صلح الحديبية على أن تعيش القبائل بأمان، لكن قريش نقضت العهد واعتدت على إحدى القبائل، فقرر النبي ﷺ التوجه إلى مكة.</p><p>أمر النبي ﷺ بتجهيز جيش كبير، وعند اقترابه أمر بإشعال النيران لتخويف قريش فأصابها الرعب.</p><p>دخل المسلمون مكة دون قتال كبير. طاف النبي ﷺ بالكعبة ثم قال لقريش: اذهبوا فأنتم الطلقاء. وأمر بلال بن رباح أن يؤذن فوق الكعبة.</p>`,
+    questions: [
+      { q: "١. ما اسم الاتفاق الذي كان بين النبي ﷺ وقريش قبل فتح مكة؟", answers: ["غزوة بدر","صلح الحديبية","غزوة أحد","غزوة خيبر"], correct: 1 },
+      { q: "٢. ماذا أمر النبي ﷺ عند اقتراب الجيش من مكة؟", answers: ["الرجوع إلى المدينة","مهاجمة مكة مباشرة","إشعال النيران لتخويف قريش","التفاوض مع قريش"], correct: 2 },
+      { q: "٣. ماذا قال النبي ﷺ لأهل مكة بعد فتحها؟", answers: ["اذهبوا فأنتم الطلقاء","لا أمان لكم","سنقاتلكم","اخرجوا من مكة"], correct: 0 }
+    ]
+  },
+  {
+    title: "غزوة حنين",
+    year: "السنة الثامنة من الهجرة",
+    text: `<p>وقعت غزوة حنين في السنة الثامنة للهجرة بعد فتح مكة مباشرة. شعرت قبيلتا هوازن وثقيف بالخوف من قوة المسلمين فجمعتا جيشًا لمحاربتهم.</p><p>خرج المسلمون إلى وادي حنين. في البداية تعرضوا لهجوم مفاجئ من الأعداء المختبئين فتراجع بعضهم، لكن النبي ﷺ ثبت وشجعهم فعادوا وانتصروا.</p><p>أظهرت الغزوة أهمية الثبات وعدم الاغترار بالكثرة.</p>`,
+    questions: [
+      { q: "١. لماذا قررت هوازن وثقيف محاربة المسلمين؟", answers: ["طلبًا للسلام","خوفًا من قوة المسلمين بعد فتح مكة","رغبة في الهجرة","بسبب التجارة"], correct: 1 },
+      { q: "٢. ماذا حدث للمسلمين في بداية غزوة حنين؟", answers: ["انتصروا مباشرة","تعرضوا لهجوم مفاجئ وتراجع بعضهم","لم تحدث معركة","تحالفوا مع الأعداء"], correct: 1 },
+      { q: "٣. ماذا نتعلم من غزوة حنين؟", answers: ["أهمية العدد الكبير","أهمية الثبات وعدم الاغترار بالكثرة","ترك القتال","الهروب من المعارك"], correct: 1 }
+    ]
+  },
+  {
+    title: "غزوة تبوك",
+    year: "السنة التاسعة من الهجرة",
+    text: `<p>وقعت غزوة تبوك وتُسمى غزوة العُسرة في العام التاسع للهجرة. خرج المسلمون بقيادة النبي ﷺ لمواجهة الروم وحلفائهم.</p><p>واجه المسلمون حرارة شديدة وبُعد مسافة وقلة زاد وماء، وسُمّيت بالعُسرة لما لقيه المسلمون من شدة.</p><p>وصل الجيش إلى تبوك فلم يجدوا الروم الذين انسحبوا فراراً، فعاد المسلمون سالمين وفرضوا هيبتهم في المنطقة.</p>`,
+    questions: [
+      { q: "١. في أي عام وقعت غزوة تبوك؟", answers: ["العام الخامس للهجرة","العام السابع للهجرة","العام التاسع للهجرة","العام الحادي عشر للهجرة"], correct: 2 },
+      { q: "٢. ما هو اللقب الآخر لغزوة تبوك؟", answers: ["غزوة الفرقان","غزوة العُسرة","غزوة الأحزاب","غزوة بني المصطلق"], correct: 1 },
+      { q: "٣. ضد من خرج المسلمون في غزوة تبوك؟", answers: ["قريش وحلفائها","يهود خيبر","الروم وحلفائهم","الفرس"], correct: 2 }
     ]
   }
 ];
@@ -541,6 +625,5 @@ makeShelf('shelfRight');
 const LOGO_B64 = null;
 setLogos(LOGO_B64);
 </script>
-
 </body>
 </html>
